@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3><a href="{{ url_for('showMenu', restaurant_id=restaurant.id ) }}">{{ restaurant.name }}</a></h3>
+<h4 class="name">{{ item.name }}</h4>
+<p><span class="price">{{ item.price }}</span>
+<span class="description">{{ item.description }}</span></p>
+
+<h2>Are you sure you want to delete {{item.name}}?</h2>
+<form action="{{ url_for('deleteMenuItem',restaurant_id = item.restaurant_id, menu_id=item.id)}}" method = 'post'>
+	<input type='submit', value = 'Delete' class="delete"/>
+</form>
+<p class="controls"><a class="cancel" href="{{ url_for('showMenu', restaurant_id=restaurant.id ) }}">Cancel</a></p>
+{% endblock %}

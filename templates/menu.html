@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block controlbar %}
+<p class="controls"><a class="new" href="{{ url_for('newMenuItem', restaurant_id=restaurant.id) }}">New Menu Item</a></p>
+{% endblock %}
+
+{% block content %}
+
+  	<h2>{{ restaurant.name }}</h2>  
+  	
+  	{% if not items %}
+  	<p>You currently have no menu items.</p>
+  	{% endif %}
+	
+	<ul class="index">
+  	{% for i in items %}
+	  	<li>
+		  	<h3 class="name">{{ i.name }}</h3>
+		  	<p><span class="price">{{ i.price }}</span>
+		  	<span class="description">{{ i.description }}</span></p>
+		  	<p class="controls"><a class="edit" href="{{ url_for('editMenuItem', restaurant_id=restaurant.id, menu_id=i.id) }}">Edit Item</a>
+		  	<a class="delete" href="{{ url_for('deleteMenuItem', restaurant_id=restaurant.id, menu_id=i.id) }}">Delete Item</a></p>
+		</li>
+  	{% endfor %}
+  	</ul>
+
+{% endblock %}

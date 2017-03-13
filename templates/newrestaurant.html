@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>New Restaurant</h2>
+<form action="{{ url_for('newRestaurant') }}" method="post">
+	<label>Name:
+		<input type="text" size="30" name="name"/>
+	</label>
+	<input type='submit' value='Create' class="new"/>
+</form>
+<p class="controls"><a class="cancel" href="{{ url_for('showRestaurants') }}">Cancel</a>
+{% endblock %}

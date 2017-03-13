@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Restaurant Catalog</title>
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<h1 class="header"><a href="{{ url_for('showRestaurants') }}">Restaurant Catalog</a></h1>
+{% block controlbar %}
+{% endblock %}
+<hr>
+
+{% with messages = get_flashed_messages() %}
+	{% if messages %}
+	<ul class="flash">
+	{% for message in messages %}
+		<li><strong>{{ message }}</strong></li>
+	{% endfor %}
+	</ul>
+	{% endif %}
+{% endwith %}
+
+{% block content %}
+{% endblock %}
+</body>
+</html>

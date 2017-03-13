@@ -1,0 +1,77 @@
+body {
+	margin:0 auto;
+	padding:0 10px;
+	max-width:40em;
+}
+h1 {
+	text-align: center;
+}
+h1 a, h2 a, h3 a {
+	color:black;
+	text-decoration: none;
+}
+h2 a:visited, h3 a:visited {
+	color:#666;
+}
+input {
+	margin-top:5px;
+	margin-bottom:5px;
+}
+input[type='text'] {
+	display: block;
+	width: 200px;
+}
+label {
+	display: block;
+}
+ul {
+	padding:0;
+	list-style: none;
+}
+form {
+	margin-bottom:1em;
+}
+.index li {
+	margin-bottom:3em;
+}
+input[type='submit'] {
+	cursor: pointer;
+	vertical-align: middle;
+	font-size: 16px;
+}
+.controls a, input[type='submit'] {
+	text-decoration: none;
+	padding:0.5em 1em;
+	border-radius: 4px;
+	color: #fff;
+	font-family: sans-serif;
+	font-size: 0.8em;
+}
+.new {
+	border:1px solid #00cc99;
+	background: #00cc99;
+}
+.edit {
+	border:1px solid #00b8e6;
+	background: #00b8e6;
+}
+.delete {
+	border:1px solid #ff3333;
+	background: #ff3333;
+}
+.controls .cancel {
+	border:1px solid #eee;
+	background: #eee;
+	color: black;
+}
+.price {
+	float: right;
+	font-style: italic;
+}
+.flash {
+	width: 100%;
+	padding:0.5em 2em;
+	background: #ffe066;
+	border:1px solid #ffe066;
+	border-radius: 4px;
+}

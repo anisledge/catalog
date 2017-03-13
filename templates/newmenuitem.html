@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>New Menu Item</h2>
+<h3><a href = "{{ url_for('showMenu', restaurant_id = restaurant.id )}}">{{ restaurant.name }}</a></h3>
+<form action="{{ url_for('newMenuItem', restaurant_id=restaurant.id ) }}" method="post">
+	<label>Name:
+		<input type="text" name="name"/>
+	</label>
+	<label>Description:
+		<input type="text" name="description"/>
+	</label>
+	<label>Price:
+		<input type="text" name="price"/>
+	</label>
+	Course:
+	<label>
+		<input type="radio" name="course" value="appetizer">
+		Appetizer
+	</label>
+	<label>
+		<input type="radio" name="course" value="entree">
+		Entree
+	</label>
+	<label>
+		<input type="radio" name="course" value="dessert">
+		Dessert
+	</label>
+	<label>
+		<input type="radio" name="course" value="beverage">
+		Beverage
+	</label>
+	<input type='submit' value='Create' class='new'/>
+</form>
+<p class="controls"><a class="cancel" href = "{{ url_for('showMenu', restaurant_id = restaurant.id )}}">Cancel</a>
+{% endblock %}
